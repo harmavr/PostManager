@@ -27,7 +27,13 @@ export default function Profile() {
       <div className="basicInfo">
         <h1>
           Usermame: {username}{" "}
-          {authUsername === username && <ManageAccountsIcon />}
+          {authUsername === username && (
+            <ManageAccountsIcon
+              onClick={() => {
+                navigate("/changepassword");
+              }}
+            />
+          )}
         </h1>
 
         {listOfPosts.map((value, key) => {
