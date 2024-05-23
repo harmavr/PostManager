@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
+import { useSelector } from "react-redux";
 
 export default function Profile() {
   let { id } = useParams();
@@ -8,6 +10,7 @@ export default function Profile() {
   const [username, setUsername] = useState("");
   const [listOfPosts, setListOfPosts] = useState([]);
   let navigate = useNavigate();
+  const authUsername = useSelector((state) => state.username);
 
   useEffect(() => {
     axios.get(`http://localhost:3001/auth/profile/${id}`).then((res) => {
@@ -22,7 +25,11 @@ export default function Profile() {
   return (
     <div className="profilePageContainer">
       <div className="basicInfo">
-        <h1>Usermame: {username}</h1>
+        <h1>
+          Usermame: {username}{" "}
+          {authUsername === username && <ManageAccountsIcon />}
+        </h1>
+
         {listOfPosts.map((value, key) => {
           return (
             <div className="post" key={key}>
