@@ -12,6 +12,7 @@ import { authenticated, notAuthenticated } from "./redux/actions";
 import axios from "axios";
 import PageNotFound from "./pages/PageNotFound";
 import Profile from "./pages/Profile";
+import ChangePassword from "./pages/ChangePassword";
 
 function App() {
   const authStateLogin = useSelector((state) => state.login);
@@ -86,6 +87,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/changepassword" element={<ChangePassword />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
