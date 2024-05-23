@@ -112,6 +112,7 @@ export default function Post() {
         },
       }
     );
+    setPostObject({ ...postObject, title: newTitle });
   };
 
   const handleEditTextClick = () => {
@@ -138,6 +139,7 @@ export default function Post() {
         },
       }
     );
+    setPostObject({ ...postObject, postText: newText });
   };
 
   return (
