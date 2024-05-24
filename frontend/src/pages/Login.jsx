@@ -26,12 +26,14 @@ export default function Login() {
   };
   return (
     <div className="loginContainer">
+      <label htmlFor="">Username</label>
       <input
         type="text"
         onChange={(event) => {
           setUsername(event.target.value);
         }}
       />
+      <label htmlFor="">Password</label>
       <input
         type="password"
         onChange={(event) => {
