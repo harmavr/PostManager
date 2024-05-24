@@ -28,10 +28,11 @@ export default function ChangePassword() {
   };
 
   return (
-    <div>
+    <div className="changePasswordContainer">
       <h1>Change your password</h1>
       <input
         type="password"
+        className="oldPassword"
         placeholder="Old password"
         onChange={(event) => {
           setOldPassword(event.target.value);
@@ -39,6 +40,7 @@ export default function ChangePassword() {
       />
       <input
         type="password"
+        className="newPassword"
         name=""
         id=""
         placeholder="New password"
@@ -46,7 +48,9 @@ export default function ChangePassword() {
           setNewPassword(event.target.value);
         }}
       />
-      <SaveIcon onClick={changePassword} />
+      <div className="saveNewPasswordIcon">
+        <SaveIcon onClick={changePassword} />
+      </div>
     </div>
   );
 }

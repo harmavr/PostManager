@@ -293,7 +293,8 @@ button {
 
 /* LOGIN */
 
-.loginContainer {
+.loginContainer,
+.changePasswordContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -317,5 +318,18 @@ button {
 }
 
 .loginContainer input {
+  border: 2px solid dodgerblue;
+}
+
+.changePasswordContainer input,
+.saveNewPasswordIcon {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+}
+
+.changePasswordContainer input {
   border: 2px solid dodgerblue;
 }
