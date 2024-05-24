@@ -22,7 +22,7 @@ export default function ChangePassword() {
       )
       .then((res) => {
         if (res.data.error) {
-          alert(res.error);
+          alert(res.data.error);
         }
       });
   };
